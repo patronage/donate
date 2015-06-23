@@ -1,0 +1,63 @@
+.is-sequential {
+
+    .step {
+        left: 0;
+        margin: 0;
+        opacity: 0;
+        top: 0;
+        transition: opacity $transition-duration ease,left $transition-duration ease;
+
+        &--active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        &--inactive {
+            left: -120%;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            top: $form-padding;
+            z-index: 0;
+        }
+    }
+
+}
+
+.is-not-sequential {
+    .step {
+        padding: 0 0 1em;
+        margin: 0 0 1em;
+        border-bottom: 1px solid #ddd;
+        transition: opacity $transition-duration ease,left $transition-duration ease;
+        &:nth-last-child(2) {
+            border-bottom: none;
+        }
+    }
+    .step--thanks {
+        border: none;
+        left: -120%;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: $form-padding;
+        z-index: 0;
+    }
+    &.is-complete {
+        .step {
+            left: -120%;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            top: $form-padding;
+            z-index: 0;
+        }
+        .step--thanks {
+            left: 0;
+            margin: 0;
+            opacity: 1;
+            position: static;
+            top: 0;
+        }
+    }
+}

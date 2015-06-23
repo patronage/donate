@@ -1,0 +1,19 @@
+$red: #d85316;
+
+$error-color: $red;
+
+$body-text: Helvetica,Arial,sans-serif;
+
+$form-padding: 30px;
+$form-background: #e0dfd7;
+$form-text-color: #544d46;
+
+$paginator-color-active: #034890;
+$paginator-text-color-active: #fff;
+
+$paginator-color-complete: lighten($paginator-color-active, 60%);
+$paginator-text-color-complete: darken(#fff, 50%);
+
+$transition-duration: 0.3s;
+
+$border-radius: 10px;

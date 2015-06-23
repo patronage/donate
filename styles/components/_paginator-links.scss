@@ -1,0 +1,55 @@
+.paginator {
+    border-bottom: 5px solid #EEEEEE;
+    border-radius: $border-radius $border-radius 0 0;
+    list-style:none;
+    margin: 30px 0 0;
+    padding: 30px 0 30px;
+    text-align: center;
+    li {
+        display: inline-block;
+        margin: 0 10px;
+
+        span {
+            background: linear-gradient(#0e6e7e,#0d6676);
+            border-radius: 50px;
+            color: #fff;
+            cursor: pointer;
+            display: block;
+            height: 35px;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 35px;
+            text-align: center;
+            text-decoration: none;
+            transition:
+                color $transition-duration,
+                opacity $transition-duration,
+                background $transition-duration;
+            width: 35px;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &.is-disabled {
+            span {
+                background: #EEEEEE;
+                color: #DDDDDD;
+            }
+        }
+
+        &.is-active {
+            span {
+                background: linear-gradient(#0e6e7e,#0d6676);
+                color: #FFFFFF;
+            }
+        }
+
+        &.is-complete {
+            span {
+                opacity: 0.5;
+            }
+        }
+    }
+}

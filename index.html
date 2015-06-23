@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Patronage Donate</title>
+        <meta name="viewport" content="width=device-width">
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="stylesheets/screen.css">
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-########-#', 'auto');
+        ga('send', 'pageview');
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div id="rsd-donate"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/assets/js/es5-shim.min.js"></script>
+        <script src="/assets/js/es5-sham.min.js"></script>
+        <script src="app.js"></script>
+        <script>
+            var ga = ga || function() {};
+            var dataLayer = dataLayer || [];
+
+            PatronageDonate( document.getElementById("rsd-donate"), {
+
+                debug: true,
+                sequential: true,
+                slug: 'nmss',
+                formid: 54044,
+                apikey: '###',
+                processor: 'convio',
+                // Amounts should be tied to a form field ID
+                amounts: {
+                    30: 123,
+                    75: 234,
+                    150: 345,
+                    250: 456,
+                    500: 567
+                },
+                // Content
+                introContent: '<p>Choose an amount to donate to [ Your Cause ] today.</p>',
+                thanksContent: '<p>Thank you for your donation.</p>',
+
+                onEnteredData: function( label ) {
+                    /*
+                     * Data entered into a field with `label`
+                     * Example:
+                     * ga('send', 'event', 'Donation', 'Entered Data', label);
+                     */
+                },
+
+                onFieldError: function( error ) {
+                    /*
+                     * Error in a field
+                     * Example:
+                     * ga('send', 'event', 'Donation', 'Field Error', error);
+                     */
+                },
+
+                onSwitchStep: function( step ) {
+                    /*
+                     * `step` switched to successfully
+                     * Example:
+                     * ga('send', 'event', 'Donation', 'Switched Step', step);
+                     */
+                },
+
+                onSubmit: function() {
+                    /*
+                     * Form submitted
+                     * Example:
+                     * ga('send', 'event', 'Donation', 'Submitted donation');
+                     */
+                },
+
+                onSuccessfulDonation: function( amount, transaction ) {
+                    /*
+                     * `transaction` (if received) is an integer
+                     * `amount` is a floating point integer of the amount donated
+                     * /
+                },
+
+                onFailedDonation: function( error ) {
+                    /*
+                     * `error` is a message of type string explaing what went wrong
+                     * Example:
+                     * ga('send', 'event', 'Donation', 'Donation failed', error);
+                     */
+                }
+
+            });
+        </script>
+    </body>
+</html>
